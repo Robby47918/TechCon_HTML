@@ -257,3 +257,30 @@ footer {
     margin-bottom: 4px;
   }
 }
+
+.menu-toggle {
+  background: #004080;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin: 10px auto;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
