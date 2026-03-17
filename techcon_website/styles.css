@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #004080;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Main content wrapper */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Articles / Sections */
+article, main section {
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+article h2, main section h2 {
+  color: #004080;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+section h3 {
+  color: #0066cc;
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Paragraphs */
+article p, section p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Images */
+article img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+  color: #004080;
+  margin-bottom: 6px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+form button {
+  background: #004080;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #003366;
+}
+
+/* Links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Map iframe */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Tables (Schedule) */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+main caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #004080;
+  padding: 15px;
+  text-align: center;
+}
+
+main thead {
+  background: #004080;
+  color: #fff;
+}
+
+main th, main td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+main th {
+  font-weight: bold;
+}
+
+main tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+main tbody tr:hover {
+  background: #e6f0ff;
+  transition: background 0.3s ease;
+}
+
+/* Footer */
+footer {
+  background: #004080;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+
+  main table, main thead, main tbody, main th, main td, main tr {
+    display: block;
+    width: 100%;
+  }
+
+  main thead {
+    display: none;
+  }
+
+  main tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    background: #fff;
+  }
+
+  main td {
+    border: none;
+    padding: 8px;
+    position: relative;
+  }
+
+  main td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #004080;
+    display: block;
+    margin-bottom: 4px;
+  }
+}
