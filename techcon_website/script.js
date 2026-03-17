@@ -1,25 +1,18 @@
-// Wait until the DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------------------------
-     1. Handle All Forms
-  --------------------------- */
   const forms = document.querySelectorAll("form");
 
   forms.forEach(form => {
     form.addEventListener("submit", (e) => {
-      e.preventDefault(); // stop normal submission
+      e.preventDefault(); 
 
       let valid = true;
-
-      // Check inputs
       form.querySelectorAll("input[required], textarea[required]").forEach(input => {
         if (!input.value.trim()) {
           valid = false;
         }
       });
 
-      // Extra check for register form passwords
       const password = form.querySelector("#password");
       const confirmPassword = form.querySelector("#confirm-password");
       if (password && confirmPassword && password.value !== confirmPassword.value) {
@@ -28,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (valid) {
-        // Redirect to home page with success flag
         window.location.href = "index.html?success=true";
       } else {
         alert("Please fill in all required fields.");
@@ -36,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------------------------
-     2. Show Success Message on Home
-  --------------------------- */
+  
   if (window.location.search.includes("success=true")) {
     const message = document.createElement("div");
     message.textContent = "🎉 You have successfully submitted your form!";
@@ -55,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       main.insertBefore(message, main.firstChild);
     }
 
-    // Fade out after 5 seconds
     setTimeout(() => {
       message.style.transition = "opacity 1s ease";
       message.style.opacity = "0";
@@ -63,9 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
-  /* ---------------------------
-     3. Highlight Current Session
-  --------------------------- */
   const scheduleRows = document.querySelectorAll("tbody tr");
   if (scheduleRows.length > 0) {
     const now = new Date();
@@ -88,9 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------------------------
-     4. Mobile Navigation Toggle
-  --------------------------- */
   const nav = document.querySelector("nav ul");
   if (nav) {
     const toggleBtn = document.createElement("button");
